@@ -4410,6 +4410,26 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_HALLWAY_CAVE",
+      "name": "hallwayCave_Layout",
+      "width": 37,
+      "height": 22,
+      "primary_tileset": "gTileset_SecretBase",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/hallwayCave/border.bin",
+      "blockdata_filepath": "data/layouts/hallwayCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_STARTING_CAVE",
+      "name": "startingCave_Layout",
+      "width": 30,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/startingCave/border.bin",
+      "blockdata_filepath": "data/layouts/startingCave/map.bin"
     }
   ]
 }

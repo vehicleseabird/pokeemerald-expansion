@@ -131,7 +131,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    SetWarpDestination(MAP_GROUP(MAP_STARTING_CAVE), MAP_NUM(MAP_STARTING_CAVE), WARP_ID_NONE, 6, 17);
     WarpIntoMap();
 }
 
@@ -189,6 +189,7 @@ void NewGameInitData(void)
     DeactivateAllRoamers();
     gSaveBlock1Ptr->registeredItem = ITEM_NONE;
     ClearBag();
+    AddBagItem(ITEM_POKE_BALL, 10);
     NewGameInitPCItems();
     ClearPokeblocks();
     ClearDecorationInventories();

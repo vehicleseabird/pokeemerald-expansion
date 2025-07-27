@@ -1,0 +1,29 @@
+{
+  "id": "MAP_HALLWAY_CAVE",
+  "name": "hallwayCave",
+  "layout": "LAYOUT_HALLWAY_CAVE",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_START_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_STARTING_CAVE",
+      "dest_warp_id": "0",
+      "startWarp": ""
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
