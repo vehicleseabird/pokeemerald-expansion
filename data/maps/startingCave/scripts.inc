@@ -4,12 +4,14 @@ startingCave_MapScripts::
 startingCave_EventScript_Bag::
     lock
     faceplayer
+	setflag FLAG_SYS_POKEMON_GET
     fadescreen FADE_TO_BLACK
-    setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
+    setflag FLAG_STARTING_CAVE_BAG
     special ChooseStarter
+	removeobject LOCALID_START_BAG
     waitstate
 	setvar VAR_ROUTE102_STATE, 1
-    release
+	release
     end
 
 startingCave_Text_NoAdvance:
