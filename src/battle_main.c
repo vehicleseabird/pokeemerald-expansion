@@ -4490,6 +4490,21 @@ static void HandleTurnActionSelectionState(void)
                     {
                         gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
                     }
+                    else if (
+                        GetItemPocket(gBattleResources->bufferB[battler][1] | (gBattleResources->bufferB[battler][2] << 8)) == POCKET_POKE_BALLS && // 1) Poké Ball selected
+                        !(gBattleTypeFlags & BATTLE_TYPE_TRAINER) && // 2) Enemy is wild
+                        (GetMonData(&gEnemyParty[0], MON_DATA_HP) > GetMonData(&gEnemyParty[0], MON_DATA_MAX_HP) / 3) // 3) Enemy HP > 1/3
+                    )
+                    {
+                        // Block Poké Ball use if enemy is not under 1/3 HP
+                        // Refund item
+                        AddBagItem((gBattleResources->bufferB[battler][1] | (gBattleResources->bufferB[battler][2] << 8)), 1);
+                        RecordedBattle_ClearBattlerAction(battler, 1);
+                        gSelectionBattleScripts[battler] = BattleScript_ActionSelectionItemsCantBeUsed;
+                        gBattleCommunication[battler] = STATE_SELECTION_SCRIPT;
+                        gBattleStruct->selectionScriptFinished[battler] = FALSE;
+                        gBattleStruct->stateIdAfterSelScript[battler] = STATE_BEFORE_ACTION_CHOSEN;
+                    }
                     else
                     {
                         gLastUsedItem = (gBattleResources->bufferB[battler][1] | (gBattleResources->bufferB[battler][2] << 8));

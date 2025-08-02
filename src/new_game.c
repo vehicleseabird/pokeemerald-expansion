@@ -190,6 +190,7 @@ void NewGameInitData(void)
     gSaveBlock1Ptr->registeredItem = ITEM_NONE;
     ClearBag();
     AddBagItem(ITEM_POKE_BALL, 10);
+    AddBagItem(ITEM_GREAT_BALL, 10);
     NewGameInitPCItems();
     ClearPokeblocks();
     ClearDecorationInventories();

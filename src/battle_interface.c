@@ -35,6 +35,8 @@
 #include "constants/items.h"
 #include "caps.h"
 
+# define B_LAST_USED_BALL FALSE
+
 enum
 {   // Corresponds to gHealthboxElementsGfxTable (and the tables after it) in graphics.c
     // These are indexes into the tables, which are filled with 8x8 square pixel data.

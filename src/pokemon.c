@@ -1985,6 +1985,36 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon) //Credit: AsparagusEdua
     }
 }
 
+bool8 MonCanLearnMove(u16 species, u16 move)
+{
+    // Check for NULL species or invalid data
+    if (species == SPECIES_NONE || move == MOVE_NONE)
+        return FALSE;
+
+    // --- Check level-up learnset ---
+    const struct LevelUpMove *levelUpLearnset = GetSpeciesLevelUpLearnset(species);
+    const u16 *teachset = GetSpeciesTeachableLearnset(species); 
+    if (levelUpLearnset != NULL)
+    {
+        for (u32 i = 0; levelUpLearnset[i].move != LEVEL_UP_MOVE_END; i++)
+        {
+            if (levelUpLearnset[i].move == move)
+                return TRUE;
+        }
+    }
+
+    if (teachset != NULL)
+    {
+        for (u32 i = 0; teachset[i] != MOVE_NONE; i++)
+        {
+            if (teachset[i] == move)
+                return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
 u16 MonTryLearningNewMoveAtLevel(struct Pokemon *mon, bool32 firstMove, u32 level)
 {
     u32 retVal = MOVE_NONE;

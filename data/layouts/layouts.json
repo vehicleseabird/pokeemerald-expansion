@@ -4415,8 +4415,8 @@
       "id": "LAYOUT_HALLWAY_CAVE",
       "name": "hallwayCave_Layout",
       "width": 37,
-      "height": 22,
-      "primary_tileset": "gTileset_SecretBase",
+      "height": 24,
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/hallwayCave/border.bin",
       "blockdata_filepath": "data/layouts/hallwayCave/map.bin"
